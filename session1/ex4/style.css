@@ -1,0 +1,60 @@
+html,
+body {
+    font-family: 'Open Sans', 'sans-serif';
+    margin: 0;
+    padding: 10px 160px;
+    font-size: 24px;
+}
+
+.input-container {
+    display: flex;
+}
+
+.input-container>input {
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+/* .input-container>input::placeholder {
+    border: blue;
+} */
+
+.input-container>button {
+    padding: 7px 10px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.task {
+    display: flex;
+    padding: 20px 0;
+    border: 1px solid #ececec;
+    justify-content: space-between;
+}
+
+.cnt>input {
+    margin-left: 20px;
+}
+
+.cnt>span {
+    padding-left: 20px;
+}
+
+.task>button {
+    margin-right: 10px;
+    background-color: crimson;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    padding: 5px;
+}
+
+.title {
+    padding: 20px 0;
+}
