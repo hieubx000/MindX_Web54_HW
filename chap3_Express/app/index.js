@@ -1,11 +1,26 @@
 const express = require('express'); // lấy module bên thứ 3
 const postCRUD = require('./postCRUD')
-
+const cors = require('cors')
 const app = express();
+
+app.use(cors());
 
 // config để express đọc đc input người dùng dạng json
 // k có dòng này thì req.body lúc nào cũng là undefined
 app.use(express.json())
+
+app.use(express.static('static'))
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/static/index.html')
+})
+
+// app.get('/app.js', (req, res) => {
+//     res.sendFile(__dirname + '/public/app.js')
+// })
+//   app.get('/style.css', (req, res) => {
+//     res.sendFile(__dirname + '/public/style.css')
+// })
 
 //lấy tất cả bài posts
 app.get('/get-all-posts', async(req, res) => {
