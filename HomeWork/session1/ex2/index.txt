@@ -1,0 +1,22 @@
+setTimeout(function() {
+console.log('Một');
+}, 0);
+function second() {
+console.log('Hai');
+}
+second();
+
+
+Javascript là ngôn ngữ chỉ có 1 thread và nó chỉ có 1 call stack
+Nghĩa là nó chỉ làm 1 thứ tại 1 thời điểm
+Trình duyệt sẽ cung cấp các APIs và bạn chỉ cần gọi nó
+
+Chúng ta đưa ra 1 hàm và thời gian để setTimeout gọi. Bây giờ setTimeout
+là một API cung cấp bởi trình duyệt để bổ sung cho Javascript Runtime
+Lúc này trình duyệt sẽ khởi tạo một timer trong WebAPI cho hàm và sẽ đếm ngược thời gian.
+Nghĩa là khi hàm setTimeout chạy thì bản thân nó đã được chạy xong lấy ra khỏi stack
+rồi.
+Sau đó hàm second() trong stack sẽ được thực hiện và in ra chữ "Hai"
+Khi hàm setTimeout hoàn thành WebAPI sẽ đưa callback vào Task Queue
+Cuối cùng khi Event loop đến khi thấy stack không có gì thì sẽ lấy callback từ Task Queue đẩy vào Stack
+Khi đó hàm callback sẽ xuất hiện trên stack và thực hiện in ra chữ "Một"

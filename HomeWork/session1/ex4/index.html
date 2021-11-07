@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+<script src="task.js"></script>
+<script>
+    const app = document.getElementById("app")
+    var number = 1;
+    number.id = number
+    const inputContainer = document.createElement("div")
+    const input = document.createElement("input")
+    input.placeholder = "Enter new todo"
+    const btnAdd = document.createElement("button")
+    btnAdd.innerHTML = "Add"
+    btnAdd.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        if (input.value == "") {
+            return;
+        } else {
+            const content = input.value
+            const task = new Task(content)
+            app.appendChild(task.render())
+            input.value = ""
+            number++
+            title.innerHTML = `There is ${number} task to complete`
+        }
+    })
+    inputContainer.appendChild(input)
+    inputContainer.appendChild(btnAdd)
+    inputContainer.classList.add("input-container")
+
+    const title = document.createElement("div")
+    title.id = "title"
+    title.innerHTML = "There is 1 task to complete";
+    title.classList.add("title")
+
+    // const btn = document.getElementsByClassName("cb")
+
+    // console.log(btn);
+
+    const task1 = new Task("Learn react")
+
+    app.appendChild(inputContainer)
+    app.appendChild(title)
+    app.appendChild(task1.render())
+</script>
+
+</html>
