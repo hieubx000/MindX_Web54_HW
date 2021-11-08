@@ -124,6 +124,8 @@ app.delete('/posts/:deletePostId', async(req, res) => {
     })
 })
 
+//gọi tới mongoDB server 
+
 // rest api chỉ là conversation đặt tên
 
 app.listen(8080, (err) => {
